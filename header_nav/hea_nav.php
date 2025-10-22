@@ -1,3 +1,6 @@
+  <?php
+  session_start();
+  ?>
   <header>
   <div class="header-left">
     <div class="logo-container" aria-label="TripMate logo with building icon">

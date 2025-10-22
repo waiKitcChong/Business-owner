@@ -211,7 +211,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
     });
 
     // ✅ Redirect based on role
-    if (data.role === "staff") window.location.href = "staff_dashboard.php";
+    if (data.role === "staff") window.location.href = "tes.php";
     else if (data.role === "owner") window.location.href = "index.php";
     else window.location.href = "tourist_home.php";
   } else {
