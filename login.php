@@ -186,3 +186,37 @@
   </p>
  </body>
 </html>
+
+<script>
+document.querySelector("form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  const response = await fetch("https://tripmate-service-3.onrender.com/api/user/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password })
+  });
+
+  const data = await response.json();
+
+  if (data.success) {
+    
+    fetch("session/set_session.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `user_id=${data.user_id}&role=${data.role}&name=${data.name}`
+    });
+
+    // ✅ Redirect based on role
+    if (data.role === "staff") window.location.href = "staff_dashboard.php";
+    else if (data.role === "owner") window.location.href = "index.php";
+    else window.location.href = "tourist_home.php";
+  } else {
+    alert(data.message);
+  }
+});
+</script>
+
