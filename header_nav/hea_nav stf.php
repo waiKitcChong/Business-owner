@@ -1,4 +1,4 @@
-
+ 
   <header>
   <div class="header-left">
     <div class="logo-container" aria-label="TripMate logo with building icon">
@@ -32,7 +32,6 @@
 </header>
 <nav aria-label="Main navigation">
   <a href="./dashboard.php" class="active-ow" aria-current="false"><i class="fas fa-chart-line"></i> Overview</a>
-  <a href="./staff.php" class="active-st" aria-current="false"><i class="fas fa-user-friends"></i> Staff</a>
   <a href="./location.php" class="active-lo" aria-current="false"><i class="fas fa-map-marker-alt"></i> Locations</a>
   <a href="./room.php" class="active-ro" aria-current="false"><i class="fas fa-bed"></i> Rooms</a>
   <a href="./promotion.php" class="active-pro" aria-current="page"><i class="fas fa-star"></i> Promotions</a>

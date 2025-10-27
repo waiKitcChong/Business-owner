@@ -5,9 +5,9 @@
 <title>TripMate Hotel Manager - Promotions</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-<link rel="stylesheet" href="css/header.css">
-<link rel="stylesheet" href="css/navigation.css">
-<link rel="stylesheet" href="css/page/promotion.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/navigation.css">
+<link rel="stylesheet" href="../css/page/promotion.css">
 <style>
    nav a.active-pro {
     background-color: white;
@@ -21,8 +21,13 @@
 </style>
 </head>
 <body>
- <?php include 'header_nav/hea_nav.php';?>
- <?php include 'form/add_promotion.php';?>
+ <?php 
+
+ $allowed_roles = ["owner"];
+ include "../auth/security/allow_roles.php";
+ include '../header_nav/hea_nav.php';
+ include '../form/add_promotion.php';
+ ?>
 <main>
   <div class="page-header">
     <div>
@@ -142,6 +147,6 @@
     </article>
   </section>
 </main>
-<script src="js/promote.js"></script>
+<script src="../js/promote.js"></script>
 </body>
 </html>

@@ -5,9 +5,9 @@
 <title>TripMate Hotel Manager - Rooms</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-<link rel="stylesheet" href="css/header.css">
-<link rel="stylesheet" href="css/navigation.css">
-<link rel="stylesheet" href="css/page/room.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/navigation.css">
+<link rel="stylesheet" href="../css/page/room.css">
 <style>
    nav a.active-ro {
     background-color: white;
@@ -21,8 +21,14 @@
 </style>
 </head>
 <body>
- <?php include 'header_nav/hea_nav.php';?>
-  <?php include 'form/add_room.php';?>
+ <?php 
+ 
+ $allowed_roles = ["staff"];
+ include "../auth/security/allow_roles.php";
+ include '../header_nav/hea_nav stf.php';
+ include '../form/add_room.php';
+  
+ ?>
 <main class="container" role="main">
   <div class="main-header">
     <div class="main-header-left">
@@ -211,6 +217,6 @@
     </table>
   </section>
 </main>
-<script src="js/room.js"></script>
+<script src="../js/room.js"></script>
 </body>
 </html>

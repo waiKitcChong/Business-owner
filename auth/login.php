@@ -180,8 +180,8 @@
   </main>
   <p class="bottom-text">
    Don't have an account?
-   <a href="#" tabindex="0">
-    Contact administrator
+   <a href="../business_apply/applyForm.php" tabindex="0">
+    Apply Now!!
    </a>
   </p>
  </body>
@@ -204,15 +204,15 @@ document.querySelector("form").addEventListener("submit", async (e) => {
 
   if (data.success) {
     
-    fetch("session/set_session.php", {
+    fetch("../session/set_session.php", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: `user_id=${data.user_id}&role=${data.role}&name=${data.name}`
     });
 
-    // ✅ Redirect based on role
-    if (data.role === "staff") window.location.href = "tes.php";
-    else if (data.role === "owner") window.location.href = "index.php";
+    
+    if (data.role === "staff") window.location.href = "../staff/dashboard.php";
+    else if (data.role === "owner") window.location.href = "../business_owner/dashboard.php";
     else window.location.href = "tourist_home.php";
   } else {
     alert(data.message);

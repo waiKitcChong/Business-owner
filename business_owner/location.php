@@ -5,9 +5,9 @@
 <title>TripMate Hotel Manager</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-<link rel="stylesheet" href="css/header.css">
-<link rel="stylesheet" href="css/navigation.css">
-<link rel="stylesheet" href="css/page/location.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/navigation.css">
+<link rel="stylesheet" href="../css/page/location.css">
 <style>
    nav a.active-lo {
     background-color: white;
@@ -21,8 +21,14 @@
 </style>
 </head>
 <body>
-   <?php include 'header_nav/hea_nav.php';?>
-   <?php include 'form/add_location.php';?>
+   <?php 
+  
+ 
+   $allowed_roles = ["owner"];
+   include "../auth/security/allow_roles.php";
+   include '../header_nav/hea_nav.php';
+   include '../form/add_location.php';
+   ?>
   <div class="container">
     <main>
       <h2>Locations Management</h2>
@@ -113,6 +119,6 @@
       </div>
     </main>
   </div>
-  <script src="js/location.js"></script>
+  <script src="../js/location.js"></script>
 </body>
 </html>
