@@ -25,7 +25,6 @@
 
  $allowed_roles = ["owner"];
  include "../auth/security/allow_roles.php";
- include '../header_nav/hea_nav.php';
  include '../form/add_room.php';
   
  ?>

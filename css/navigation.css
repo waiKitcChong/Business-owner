@@ -1,5 +1,5 @@
   nav {
-    margin-top: 16px;
+ 
     background-color: #f1f5f9;
     border-radius: 12px;
     max-width: 1200px;
@@ -11,6 +11,7 @@
     padding: 8px 0;
     font-size: 13px;
     color: #64748b;
+    
   }
   nav a {
     display: flex;

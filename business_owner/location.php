@@ -22,11 +22,8 @@
 </head>
 <body>
    <?php 
-  
- 
    $allowed_roles = ["owner"];
    include "../auth/security/allow_roles.php";
-   include '../header_nav/hea_nav.php';
    include '../form/add_location.php';
    ?>
   <div class="container">
@@ -120,5 +117,6 @@
     </main>
   </div>
   <script src="../js/location.js"></script>
+  
 </body>
 </html>

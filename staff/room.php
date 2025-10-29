@@ -25,7 +25,6 @@
  
  $allowed_roles = ["staff"];
  include "../auth/security/allow_roles.php";
- include '../header_nav/hea_nav stf.php';
  include '../form/add_room.php';
   
  ?>

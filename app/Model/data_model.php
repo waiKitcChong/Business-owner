@@ -1,6 +1,5 @@
 <?php
 $url = "https://tripmate-service-3.onrender.com/get_all_data";
-
 $response = file_get_contents($url);
 $data = json_decode($response, true);
 
@@ -8,6 +7,7 @@ $data = json_decode($response, true);
 if (!$data) {
     die("Failed to fetch data from Python backend.");
 }
+
 
 // ===========================================
 // Entity Class

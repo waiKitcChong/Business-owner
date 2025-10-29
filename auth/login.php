@@ -146,10 +146,10 @@
  </head>
  <body>
   <div class="logo-container" role="banner">
-   <img alt="TripMate logo with blue background and white text and bars" height="272" src="/tripmate-owner/image/tripmate.png" width="272"/>
+   <img alt="TripMate logo with blue background and white text and bars" height="272" src="../image/tripmate.png" width="272"/>
    
    <p class="subtitle">
-    Business Management System
+     Management System
    </p>
   </div>
   <main>

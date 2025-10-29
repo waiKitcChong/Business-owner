@@ -8,10 +8,10 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['role'])) {
 
 switch ($_SESSION['role']) {
     case 'owner':
-        header("Location: pages/dashboard.php");
+        header("Location: business_owner/dashboard.php");
         exit;
     case 'staff':
-        header("Location: pages/staff.php");
+        header("Location: staff/dashboard.php");
         exit;
     default:
         header("Location: auth/logout.php");

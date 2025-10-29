@@ -25,11 +25,10 @@
 
  $allowed_roles = ["owner"];
  include "../auth/security/allow_roles.php";
- include '../header_nav/hea_nav.php';
  include '../form/add_promotion.php';
  ?>
 <main>
-  <div class="page-header">
+  <div class="page-header container">
     <div>
       <h1>Promotions Management</h1>
       <p>Create and manage promotional offers</p>

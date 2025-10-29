@@ -17,5 +17,10 @@ if (!in_array($_SESSION["role"], $allowed_roles)) {
     exit();
 }
 
+
+
+
+include '../header_nav/hea_nav.php';
+
 ?>
 
