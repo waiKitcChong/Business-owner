@@ -77,11 +77,12 @@
       </div>
     </section>
     <section class="card" aria-labelledby="staff-members-title">
-      <h2 id="staff-members-title">Staff Members (<?=count($staff)?>)</h2>
+      <h2 id="staff-members-title">Staff Members (<?= count($staff) ?>)</h2>
       <p>Manage your hotel staff members and their information</p>
       <table role="table" aria-describedby="staff-members-desc">
         <thead>
           <tr>
+            <th scope="col">Staff ID</th>
             <th scope="col">Name</th>
             <th scope="col">Country</th>
             <th scope="col">Location</th>
@@ -97,6 +98,9 @@
           ?>
             <tr>
               <td>
+                <div class="staff-name"><?= $s->staff_id ?></div>
+              </td>
+              <td>
                 <div class="staff-name"><?= $user_staff[$i]->name ?></div>
                 <div class="staff-email"><?= $user_staff[$i]->email ?></div>
               </td>
@@ -111,22 +115,24 @@
               <td>
                 <span class="status-badge <?= $isActive ? 'active' : 'inactive' ?>" aria-label="<?= ucfirst($status) ?> status">
                   <?php if ($isActive): ?>
-                    <svg aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="12" height="12">
-                      <path d="M9 12l2 2 4-4"></path>
-                    </svg>
+                    
                   <?php else: ?>
-                    <svg aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="12" height="12">
-                      <circle cx="12" cy="12" r="3"></circle>
-                      <line x1="12" y1="15" x2="12" y2="12"></line>
-                      <line x1="12" y1="9" x2="12" y2="9"></line>
-                    </svg>
+                    
                   <?php endif; ?>
                   <?= htmlspecialchars($status) ?>
                 </span>
               </td>
 
               <td><?= $s->registration_date ?></td>
-              <td><button class="btn-action" type="button" aria-label="Deactivate Sarah Johnson">Deactivate</button></td>
+              <td>
+                <button class="btn-action" type="button"
+                  data-user-id="<?= $user_staff[$i]->user_id ?>"
+                  data-status="<?= $isActive ? 'active' : 'inactive' ?>"
+                  aria-label="<?= ($isActive ? 'Deactivate' : 'Activate') . ' ' . $user_staff[$i]->name ?>">
+                  <?= $isActive ? 'Deactivate' : 'Activate' ?>
+                </button>
+              </td>
+
               <td>
                 <button class="btn-icon" type="button" aria-label="Edit Sarah Johnson">
                   <svg aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="16" height="16">
@@ -145,5 +151,7 @@
     </section>
   </main>
   <script src="../js/staff.js"></script>
+
 </body>
+
 </html>
